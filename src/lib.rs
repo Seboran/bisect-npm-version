@@ -11,14 +11,9 @@ pub fn find_not_working_version(
             let list_versions_to_test =
                 &list_of_versions[index_working_version - 1..index_not_working_version];
 
-            let mut result_version: Option<&String> = None;
-
-            for version in list_versions_to_test {
-                if script_to_run(version) {
-                    result_version = Some(version);
-                }
-            }
-            result_version
+            let partition_point =
+                list_of_versions.partition_point(|version| !script_to_run(version));
+            list_versions_to_test.get(partition_point)
         }
         (err1, err2) => {
             todo!(
