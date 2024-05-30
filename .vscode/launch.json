@@ -1,0 +1,16 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+  {
+    "type": "lldb",
+    "request": "launch",
+    "name": "test command",
+    "program": "${workspaceRoot}/target/debug/${workspaceRootFolderName}",
+    "args": ["typescript",  "5.1.6","2.0.0", "../test.sh"],
+    "cwd": "${workspaceFolder}/examples/tsc-example"
+  }
+  ]
+}
